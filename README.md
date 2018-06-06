@@ -21,5 +21,5 @@ $ docker run -d --hostname rabbitmq --name rabbitmq -p 5672:5672 -p 15672:15672 
 To test
 
 ```
-$ curl -X POST -H 'Content-Type: application/json' -d '{ "message": "Florida is a garbage state!" }' 'http://localhost:8080/camel/events/'
+$ curl -X POST -H 'Content-Type: application/json' -d '{ "message": "Hello world!" }' 'http://localhost:8080/camel/events/'
 ```
