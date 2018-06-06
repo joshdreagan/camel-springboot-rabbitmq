@@ -32,6 +32,7 @@ public class CamelConfiguration extends RouteBuilder {
     
     from("direct:post")
       .routeId("handlePostIncidents")
+      .convertBodyTo(String.class)
       .log(LoggingLevel.INFO, log, "Sending Message:\\n${body}")
       .to(ExchangePattern.InOnly, "rabbitmq://{{camel.component.rabbitmq.host}}:{{camel.component.rabbitmq.port}}/events")
       .setBody().constant(null)
